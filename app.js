@@ -23,11 +23,14 @@ bot.on('message', async function (event) {
 	let msg = ''
 	let air = await axios.get(apiURL)
 
-	console.log(air.data.records)
-
 	for (let i in air.data.records) {
-		if (air.data.records[i].sitename.includes(event.message.text)) {
-			msg += `${air.data.records[i].sitename} , ${air.data.records[i].status} , ${air.data.records[i].pollutant}\n`
+		if (
+			air.data.records[i].sitename.includes(event.message.text) ||
+			air.data.records[i].county.includes(event.message.text)
+		) {
+			msg += `
+      ※${air.data.records[i].sitename} , ${air.data.records[i].county} , ${air.data.records[i].status} , ${air.data.records[i].pollutant}\n
+      `
 		}
 	}
 	msg ? event.reply(`${msg}`) : event.reply('找不到資料，可能文字輸入錯誤')
