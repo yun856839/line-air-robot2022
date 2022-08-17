@@ -25,7 +25,9 @@ bot.on('message', async function (event) {
 
 	for (let i in air.data.records) {
 		if (
-			air.data.records[i].sitename.includes(event.message.text) ||
+			air.data.records[i].sitename
+				.replace(/[\(\)]+/g, '')
+				.match(event.message.text) ||
 			air.data.records[i].county.includes(event.message.text)
 		) {
 			msg += `
