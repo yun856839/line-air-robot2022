@@ -4,7 +4,7 @@
 
 # 專案畫面
 
-![首頁圖](https://github.com/yun856839/line-air-robot2022/blob/master/line-air-robot2022.png)
+![首頁圖](https://github.com/yun856839/line-air-robot2022/blob/master/line-air-robot2022.png.png)
 
 # 功能描述 (features)
 
