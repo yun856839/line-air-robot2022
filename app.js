@@ -27,8 +27,8 @@ bot.on('message', async function (event) {
 		if (
 			air.data.records[i].sitename
 				.replace(/[\(\)]+/g, '')
-				.match(event.message.text) ||
-			air.data.records[i].county.includes(event.message.text)
+				.match(event.message.text.trim()) ||
+			air.data.records[i].county.includes(event.message.text.trim())
 		) {
 			msg += `
       ※${air.data.records[i].sitename} , ${air.data.records[i].county} , ${air.data.records[i].status} , ${air.data.records[i].pollutant}\n
